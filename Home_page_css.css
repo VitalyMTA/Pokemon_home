@@ -1,0 +1,156 @@
+body, html {
+  width: 100%;
+  height: 100% ;
+  margin: 0;
+}
+
+[class*="col-"] 
+{
+  float: left;
+  border: 5px solid white;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.row100{height:100%;}
+.row50{height:50%;}
+.row33{height:33.33%;}
+.body{
+    background-color: #898a8a;
+}
+.nav {
+  background-color: #0ff348;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 30px;
+}
+.nav-text{
+  line-height: 30px;
+  color: black;
+  padding: 0 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header{
+  background-color: #222121;
+  text-align: center;
+  padding: 20px;}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.flex-container > [class*="col-"] {
+  float: none; /* let flexbox control layout */
+  flex: 0 0 auto; /* keep the column width percentages */
+  min-width: 0;
+}
+.content{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+}
+
+.main{
+  display: block;
+  flex: 1 1 auto;
+}
+
+.sidebar{
+  width: 40%;
+  height: 100%;
+  padding: 16px;
+  display: inline-block;
+  background: white;
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* keep long strings inside */
+  word-break: break-word;
+}
+
+.footer{
+  background-color: #6e6e6e;
+  text-align: center;
+  padding: 10px;
+}
+
+.home-title{
+  background-color: white;
+  display: flex;
+}
+.home-title-text{
+  margin: auto;
+  font-size: 70px;
+}
+
+hr{
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 8px 0;
+}
+
+.main-size{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.register-form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+  box-shadow: 0 0 10px #6e6e6e;
+}
+
+@media screen and (max-width: 768px) {
+  /* Stack main content and sidebar */
+  .content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Full-width containers on small screens */
+  .main,
+  .sidebar,
+  .main-size {
+    width: 100%;
+  }
+
+  /* Sidebar grows naturally and reduces padding */
+  .sidebar {
+    height: auto;
+    padding: 12px;
+  }
+
+  /* Scale title instead of overflowing */
+  .home-title-text {
+    font-size: clamp(28px, 8vw, 48px); /* 28px means cant be samller than 28px and 48px means cant be larger than 48px */
+  }
+
+  /* Images shrink within their containers */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
